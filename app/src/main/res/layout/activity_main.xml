@@ -1,0 +1,208 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:background="@drawable/bg_gradient">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="--"
+        android:id="@+id/temperatureLabel"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffffff"
+        android:textSize="150sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/degLabel"
+        android:layout_alignTop="@+id/temperatureLabel"
+        android:layout_toRightOf="@+id/temperatureLabel"
+        android:layout_toEndOf="@+id/temperatureLabel"
+        android:src="@drawable/degree"
+        android:layout_marginTop="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="..."
+        android:id="@+id/timeLabel"
+        android:layout_above="@+id/temperatureLabel"
+        android:layout_centerHorizontal="true"
+        android:textColor="#76ffffff"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alcatraz Island, CA"
+        android:id="@+id/locLabel"
+        android:layout_above="@+id/timeLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:textColor="#ffffffff"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/IconLabel"
+        android:layout_alignBottom="@+id/locLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/cloudy_night" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/temperatureLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/linearLayout">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Humidity"
+                android:id="@+id/hum"
+                android:textColor="#6fffffff"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="--"
+                android:id="@+id/humVal"
+                android:textColor="#ffffffff"
+                android:textSize="24sp"
+                android:gravity="center_horizontal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rain/Snow"
+                android:id="@+id/prepLabel"
+                android:textColor="#7cffffff"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="--"
+                android:id="@+id/prepVal"
+                android:textSize="24sp"
+                android:textColor="#ffffffff"
+                android:gravity="center_horizontal" />
+        </LinearLayout>
+
+/////////////////////
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Feels Like"
+                android:id="@+id/Actual"
+                android:textColor="#7cffffff"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="--"
+                android:id="@+id/actualVal"
+                android:textSize="24sp"
+                android:textColor="#ffffffff"
+                android:gravity="center_horizontal" />
+        </LinearLayout>
+
+     ////////////////////////////
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Getting weather..."
+        android:id="@+id/sumLabel"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:textColor="#ffffffff"
+        android:textSize="18dp"
+        android:gravity="center_horizontal" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/refresh_but"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:baselineAlignBottom="false"
+        android:src="@drawable/refresh" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_alignBottom="@+id/refresh_but"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Week"
+            android:id="@+id/dayButton"
+            android:layout_weight="1"
+            android:layout_marginLeft="2dp"
+            android:background="#5fe9eaf2" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hourly"
+            android:id="@+id/hourbutton"
+            android:layout_weight="1"
+            android:background="#5df2e8f0" />
+    </LinearLayout>
+</RelativeLayout>
